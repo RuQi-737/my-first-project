@@ -1,0 +1,82 @@
+\documentclass{project} % Use the shared LaTeX class
+
+% YOU CAN DELETE THIS PACKAGE
+\usepackage{lipsum}  % Load the lipsum package
+
+% Define project-specific details
+\renewcommand{\ProjectTitle}{Your Project Title}
+\renewcommand{\author}{Name 1, First Name 1; Name 2, First Name 2, ...}
+
+% Header and Footer
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ihead{Artificial Intelligence in Production Engineering \\ \rule{\textwidth}{0.4pt}}
+\ifoot{\copyright~\textit{iwb}~--~Institute for Machine Tools and Industrial Management}
+\ofoot{\pagemark}
+
+% Define title page layout
+\renewcommand{\maketitle}{
+  \begin{titlepage}
+    \centering
+    {\Huge \bfseries \color{sectionblue} \ProjectTitle \par}
+    \vspace{1cm}
+    {\Large \textbf{Project Report} \par}
+    \vspace{1.5cm}
+    {\Large Author(s): \author \par}
+    \vspace{1.5cm}
+    \includegraphics[width=0.4\textwidth]{src/figs/TUM_x_iwb_Logo.pdf}
+    \vspace*{1cm}
+    \input{src/0_abstract.tex}
+    \vfill
+    {\normalsize \color{sectionblue} \textbf{Institute for Machine Tools and Industrial Management (\textit{iwb})} \par}
+    {\normalsize \color{sectionblue} \textbf{School of Engineering and Design} \par}
+    {\normalsize \color{sectionblue} \textbf{Technical University of Munich (TUM)} \par}
+    \vspace{1cm}
+    {\normalsize \today}
+  \end{titlepage}
+}
+
+% Add bibliography file (If you use one)
+\addbibresource{literature.bib} % Path to your .bib file
+\input{src/abbreviations.tex}%
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\printglossary[type=acronym, title=List of Abbreviations]
+
+\pagenumbering{arabic} % Use 1, 2, 3, ...
+\setcounter{page}{1}  % Restart numbering
+
+\newpage
+
+% DELETE OR UNCOMMENT THIS LINE ONCE IT IS NOT NECESSARY
+\input{src/latex_tutorial_EN.tex}
+
+\input{src/1_introduction.tex}%
+
+\input{src/2_methods.tex}%
+
+\input{src/3_results.tex}%
+
+\input{src/4_discussion.tex}%
+
+\input{src/5_summary.tex}%
+
+\newpage
+\appendix
+
+\input{src/6_appendix.tex}%
+
+%% INPUT YOUR CODE HERE
+
+\clearpage
+\printbibliography % Print the bibliography
+
+\end{document}
